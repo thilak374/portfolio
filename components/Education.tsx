@@ -1,28 +1,25 @@
 // components/Education.tsx
-"use client";
-import { motion } from "framer-motion";
+import Reveal from "@/components/Reveal";
 
 export default function Education() {
   return (
-    <section className="py-24 bg-black/40">
-      <h2 className="text-center text-4xl font-bold text-primary mb-12">
-        Education
-      </h2>
+    <section id="education" className="py-24 bg-black/40">
+      <Reveal>
+        <h2 className="text-center text-4xl font-bold text-primary mb-12">
+          Education
+        </h2>
+      </Reveal>
 
       <div className="max-w-3xl mx-auto space-y-6 px-6">
-        {[
-          "Bachelor’s Degree – Computer Science",
-          "Web Development & UI Certification",
-        ].map((item, i) => (
-          <motion.div
-            key={i}
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -40 }}
-            className="p-6 rounded-xl bg-bgDark border border-purple-800"
-          >
-            {item}
-          </motion.div>
-        ))}
+        {["Bachelor’s Degree – Computer Science", "Web Development Certification"].map(
+          (item, i) => (
+            <Reveal key={i}>
+              <div className="p-6 rounded-xl bg-[#120b1f] border border-purple-700 text-white">
+                {item}
+              </div>
+            </Reveal>
+          )
+        )}
       </div>
     </section>
   );
